@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   attr_accessor :card_number, :card_cvv, :card_expires_month, :card_expires_year, :card_name
   belongs_to :user
+  belongs_to :theater
 
   def self.month_options
     Date::MONTHNAMES.compact.each_with_index.map { |name, i| ["#{i+1} - #{name}", i+1] }

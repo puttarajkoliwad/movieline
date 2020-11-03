@@ -1,8 +1,8 @@
 class Theater < ApplicationRecord
   has_many :movie_theaters
   has_many :movies, through: :movie_theaters
-  #has_many :bookings
-  #has_many :users, through: :bookings
+  has_many :bookings
+  has_many :users, through: :bookings
   attr_accessor :rows
 
   def self.show_timings

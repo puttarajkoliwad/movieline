@@ -64,9 +64,7 @@ class TheatersController < ApplicationController
   end
 
   def book
-    current_user.wallet -= @theater.price
-    flash[:notice] = "Your ticket is booked! Updated wallet balance is Rs. #{current_user.wallet}!"
-    render 'new'
+    
   end
 
   private
