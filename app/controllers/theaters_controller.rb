@@ -1,6 +1,6 @@
 class TheatersController < ApplicationController
-  before_action :require_admin, except: [:show, :index ]
-  before_action :set_theater, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, only: [:new, :edit, :update, :destroy, :create ]
+  before_action :set_theater, only: [:show, :edit, :update, :destroy, :book]
 
   # GET /theaters
   # GET /theaters.json
@@ -11,6 +11,7 @@ class TheatersController < ApplicationController
   # GET /theaters/1
   # GET /theaters/1.json
   def show
+    @movies = @theater.movies
   end
 
   # GET /theaters/new
@@ -60,6 +61,12 @@ class TheatersController < ApplicationController
       format.html { redirect_to theaters_url, notice: 'Theater was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def book
+    current_user.wallet -= @theater.price
+    flash[:notice] = "Your ticket is booked! Updated wallet balance is Rs. #{current_user.wallet}!"
+    render 'new'
   end
 
   private

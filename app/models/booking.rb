@@ -15,4 +15,6 @@ class Booking < ApplicationRecord
                                         address: { line1: '510 Townsend St', postal_code: '98140', city: 'San Francisco', state: 'CA', country: 'US' }
     Stripe::Charge.create customer: customer.id, amount: 1000, description: "Ticket details", currency: 'usd'
   end
+
+  
 end

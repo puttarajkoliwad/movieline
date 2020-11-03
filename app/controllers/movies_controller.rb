@@ -54,8 +54,7 @@ class MoviesController < ApplicationController
     end
   end
 
-  def book
-  end
+  
 
   # DELETE /movies/1
   # DELETE /movies/1.json

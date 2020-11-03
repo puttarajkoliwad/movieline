@@ -22,5 +22,7 @@ class Theater < ApplicationRecord
       slot = {slot => [seats]}
     end
   end
+
+  
   
 end

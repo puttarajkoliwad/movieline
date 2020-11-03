@@ -15,5 +15,16 @@
   <%= @theater.location %>
 </p>
 
+<p>
+  <strong>Showing now:</strong>
+  <% @movies.each do |movie| %>
+    <%= link_to movie.title, movie %>
+  <% end %> 
+</P>
+
+<p>
+    <%= link_to 'Book ticket', @theater %>
+</p>
+
 <%= link_to 'Edit', edit_theater_path(@theater) %> |
 <%= link_to 'Back', theaters_path %>
