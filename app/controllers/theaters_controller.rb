@@ -1,6 +1,6 @@
 class TheatersController < ApplicationController
   before_action :require_admin, only: [:new, :edit, :update, :destroy, :create ]
-  before_action :set_theater, only: [:show, :edit, :update, :destroy, :book]
+  before_action :set_theater, only: [:show, :edit, :update, :destroy]
 
   # GET /theaters
   # GET /theaters.json

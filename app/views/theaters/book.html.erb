@@ -1,7 +1,12 @@
 <h3>Booking confirmed</h3>
 <p>
-<%= current_user.wallet = current_user.wallet -120 %>
+<% current_balance = current_user.wallet.balance %>
+<% if current_user.wallet.update(balance: current_balance -120) %>
+  <strong>Booking confirmed. Ticket amount debited from your wallet!</strong>
   <strong>Your pdated wallet balance is: Rs.<strong><%= current_user.wallet.balance %>
+<% else %>
+  <%= flash[:error] = "Booking failed. Please check your wallet status and try again!" %>
+<% end %>
 <p>
 
 <p>
