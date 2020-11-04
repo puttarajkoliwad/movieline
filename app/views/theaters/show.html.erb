@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Theater name:</strong>
   <%= @theater.name %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Ticket price:</strong>
   <%= @theater.price %>
 </p>
 
@@ -22,12 +22,12 @@
   <% end %> 
 </P>
 
-<div>
+<div class="mt-4">
   <strong>Show timings:</strong>
   <% @theater.timings.each do |timing| %>
-    <span class="badge badge-secondary ml-1"><%= timing %></span>
+    <span class="badge badge-secondary ml-1"><%= link_to timing, book_ticket_path %></span>
   <% end %>
-  <p class="mt-2">
+  <p class="mt-4">
     [Select a time slot to book ticket]
   </p>
   <%= link_to 'Book ticket', book_ticket_path %>
