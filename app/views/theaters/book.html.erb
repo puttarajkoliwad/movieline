@@ -1,5 +1,5 @@
 <h3>Booking confirmed</h3>
-<p>
+<p class="mt-4">
 <% current_balance = current_user.wallet.balance %>
 <% if current_user.wallet.update(balance: current_balance -120) %>
   <strong>Booking confirmed. Ticket amount debited from your wallet!</strong>
@@ -10,5 +10,5 @@
 <p>
 
 <p>
-  <strong>Ticket id:</strong> P10
+  <strong>Seat id:</strong> P10
 </p>
