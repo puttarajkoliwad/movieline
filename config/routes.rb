@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'book_ticket', to: 'theaters#book'
   #post 'select_seats', to: theaters#select_seats
-  
+  get 'users/activate_wallet'
+  get 'user', to: "users#show"
+  #get 'activate_wallet', to: 'users#activate_wallet'
 end
 #selva sir 9791184989
