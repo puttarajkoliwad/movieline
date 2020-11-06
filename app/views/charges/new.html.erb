@@ -1,0 +1,18 @@
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: Rs.1000</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.application.credentials.stripe[:STRIPE_TEST_PUBLISHABLE_KEY] %>"
+          data-description="Wallet recharge"
+          data-amount="1000"
+          data-locale="auto"></script>
+<% end %>

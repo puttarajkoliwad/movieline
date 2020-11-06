@@ -1,0 +1,7 @@
+<h2>Wallet recharge successful for the amount of <strong>Rs.1000</strong>!</h2>
+<p>
+  <% updated_balance = current_user.wallet.balance + 1000 %>
+  <% if current_user.wallet.update(balance: updated_balance) %>
+    Your updated wallet balance is: <strong>Rs.<%= current_user.wallet.balance %></strong>
+  <% end %>
+</p>
