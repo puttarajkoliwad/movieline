@@ -64,7 +64,12 @@ class TheatersController < ApplicationController
   end
 
   def book
-    
+    if current_user.wallet.balance < 100
+      flash.now[:alert] = "Insufficient wallet balance. Please recharge your wallet to use this service!"
+      redirect_to new_charge_path
+    else
+      render 'book'
+    end
   end
 
   private
